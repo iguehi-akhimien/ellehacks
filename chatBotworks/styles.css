@@ -134,3 +134,20 @@ body {
 ::-webkit-scrollbar-thumb:hover {
     background: #5a5a5a;
 }
+
+#back-button {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+}
+
+#back-button:hover {
+    background-color: #0056b3;
+}

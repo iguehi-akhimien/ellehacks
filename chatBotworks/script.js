@@ -163,3 +163,7 @@ userInput.addEventListener('keypress', (e) => {
         // Calls `handleUserInput` to send the message.
     }
 });
+
+function goBack() {
+    window.location.href = 'index.html'; // Redirect to the index.html file
+}
