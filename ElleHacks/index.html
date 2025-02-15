@@ -1,22 +1,46 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>ElderEase</title>
-  <link rel="stylesheet" href="style.css" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>ElderEase</title>
 </head>
 <body>
-  <div class="container">
-    <h1>Welcome to ElderEase</h1>
-    <div class="button-group">
-      <button id="chatbotBtn">🗣️ Ask a Question</button>
-      <button id="tutorialsBtn">🎥 Video Tutorials</button>
-      <button id="remoteHelpBtn">📞 Get Help</button>
+    <div class="container">
+        <h1>Welcome to ElderEase</h1>
+        <button id="chatbotBtn">🗣️ Ask a Question</button>
+        <button id="tutorialsBtn">🎥 Video Tutorials</button>
+        <button id="remoteHelpBtn">📞 Get Help</button>
+
+        <!-- Video Tutorials Section (hidden by default) -->
+        <div id="videoTutorialsSection" class="hidden">
+            <h2>Volunteers: Please Upload Your Videos</h2>
+
+            <!-- Video upload form -->
+            <form id="uploadForm" enctype="multipart/form-data">
+                <input type="text" id="title" placeholder="Video Title" required>
+                <input type="text" id="description" placeholder="Video Description" required>
+                <input type="text" id="keywords" placeholder="Comma separated keywords" required>
+                <input type="file" id="videoFile" accept="video/*" required>
+                <button type="submit">Upload Video</button>
+            </form>
+
+            <!-- Feedback after upload -->
+            <div id="uploadFeedback"></div>
+
+            <h3>Search Videos</h3>
+            <input type="text" id="searchInput" placeholder="Search by keyword">
+            <button id="searchBtn">Search</button>
+
+            <h3>Video Results</h3>
+            <div id="videoResults"></div>
+
+            <!-- Google Form link for video submission -->
+            <p>Alternatively, you can submit videos by filling out the form <a href="https://docs.google.com/forms/d/e/1FAIpQLSenYTs_93_hbBQ_n25xCFyu5Q748VlOHlJbH4qLtwyMoWv0ug/viewform?usp=sharing" target="_blank">here</a>.</p>
+        </div>
     </div>
-    <!-- This div will be used to load content dynamically -->
-    <div id="content"></div>
-  </div>
-  <script src="app.js"></script>
+
+    <script src="app.js"></script>
 </body>
 </html>
