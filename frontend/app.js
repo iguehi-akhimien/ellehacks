@@ -35,8 +35,8 @@ function startVoiceRecognition() {
                     "Access-Control-Allow-Headers": "Content-Type, Authorization"
                 },
                 body: JSON.stringify({
-                    question: `A senior is asking: ${spokenText}. Only show direct steps. Start each step with 'Step'.
-                    Each step should not be more than 20 words. Don't add introductory or concluding sentences.` ,
+                    question: `A senior is asking: ${spokenText}. Only show direct steps. Start each step with \'Step\'.
+                    Each step should not be more than 20 words. Don\'t add introductory or concluding sentences.` ,
                 })
             })
             .then(response => response.json())
@@ -44,6 +44,7 @@ function startVoiceRecognition() {
                 showToast(data.response);
                 showToast("If you need more help, say no.");
                 const audio = new Audio("data:audio/wav;base64," + data.audio);
+                audio.playbackRate = 0.55;
                 audio.play();
             })
             .catch(err => {
