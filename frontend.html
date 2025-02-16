@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Video Search</title>
+</head>
+<body>
+    <h1>Video Search</h1>
+    <input type="text" id="search-query" placeholder="Search for videos...">
+    <button onclick="searchVideos()">Search</button>
+
+    <div id="video-results"></div>
+
+    <script>
+        async function searchVideos() {
+    const query = document.getElementById('search-query').value;
+    if (!query) {
+        alert("Please enter a search query.");
+        return;
+    }
+
+    try {
+        const response = await fetch(`http://localhost:3001/search?query=${query}`, {
+            method: 'GET',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            credentials: 'include'  // Include cookies (if needed)
+        });
+
+        // Check if response is not OK (status code 200-299)
+        if (!response.ok) {
+            throw new Error('Failed to fetch video results');
+        }
+
+        const results = await response.json();
+
+        // If no videos found, handle it here
+        if (results.message === 'No videos found') {
+            alert('No videos found for your search query.');
+            return;
+        }
+
+        // Display the results
+        displayResults(results);
+    } catch (err) {
+        console.error("Error:", err);
+        alert("Failed to fetch video results");
+    }
+}
+
+function displayResults(results) {
+    const resultsDiv = document.getElementById('video-results');
+    resultsDiv.innerHTML = '';  // Clear previous results
+
+    if (results.length === 0) {
+        resultsDiv.innerHTML = '<p>No videos found</p>';
+        return;
+    }
+
+    results.forEach(video => {
+        const videoElement = document.createElement('div');
+        videoElement.innerHTML = `
+            <p>Filename: ${video.filename}</p>
+            <a href="${video.path}" target="_blank">Watch Video</a>
+        `;
+        resultsDiv.appendChild(videoElement);
+    });
+}
+
+    </script>
+</body>
+</html>
