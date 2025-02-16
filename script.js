@@ -1,3 +1,7 @@
+
+//api for the chatbot
+
+
 const API_KEY = 'AIzaSyCGjcbrlA36TSi8hnZl8FZ3xLznHqQAmnA'; 
 // Replace with your actual Gemini API key – this stores the API key to authenticate requests to the Gemini API.
 
