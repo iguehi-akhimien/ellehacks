@@ -11,9 +11,12 @@ We’re the AI Angels team, and we’ve built ElderEase—a web application desi
 ### Technology Behind ElderEase
 To bring ElderEase to life, we used:
 
--Frontend: JavaScript, HTML, and CSS
--Backend: Python, Flask, and GenAI APIs
-Key Features
+#### Frontend: 
+JavaScript, HTML, and CSS
+#### Backend: 
+Python, Flask, and GenAI APIs (Google Gemini and PlayHT)
+
+### Key Features
 ElderEase offers a range of functionalities tailored to our audience:
 1. Speech-to-text conversation – Simply speak, and the app transcribes it.
 2. Text-to-text conversation – Type out questions and get clear, step-by-step guidance.
@@ -28,6 +31,6 @@ __With ElderEase, navigating the digital world is simpler than ever! 🌟__
 
 
 ## Demo Video link : 
-Link[demo](https://youtu.be/WDxFVfc1LTM) 
+[Click here!](https://youtu.be/WDxFVfc1LTM) 
 
 
