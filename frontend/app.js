@@ -10,9 +10,8 @@ document.getElementById('chatbotBtn').addEventListener('click', () => {
                 "Access-Control-Allow-Headers": "Content-Type, Authorization"
             },
             body: JSON.stringify({
-                question: `A senior is asking: ${question}. Provide a simple, step-by-step explanation.`,
+                question: 'A senior is asking: ${spokenText}. Only show direct steps. Start each step with \'Step\' and end with \'#\'Each step should not be more than 20 words. Do not add introductory or concluding sentences.',
             })
-        })
         .then(response => response.json())
         .then(data => {
             alert("Answer: " + data.response);
@@ -41,7 +40,8 @@ function startVoiceRecognition() {
                     "Access-Control-Allow-Headers": "Content-Type, Authorization"
                 },
                 body: JSON.stringify({
-                    question: `A senior is asking: ${spokenText}. Provide a simple, step-by-step explanation.`,
+                    question: `A senior is asking: ${spokenText}. Only show direct steps. Start each step with 'Step'.
+                    Each step should not be more than 20 words. Don't add introductory or concluding sentences.` ,
                 })
             })
             .then(response => response.json())
