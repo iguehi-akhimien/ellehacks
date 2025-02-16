@@ -1,5 +1,6 @@
-# Ellehacks
+# ElleHacks: ElderEase
 ## Run:
+To run the program, first download the latest version of pip. Then, run this:
 ```
 python3 -m pip install -r backend\requirements.txt
 ```
@@ -11,14 +12,14 @@ We’re the AI Angels team, and we’ve built ElderEase—a web application desi
 To bring ElderEase to life, we used:
 
 -Frontend: JavaScript, HTML, and CSS
-- Backend: Python, Flask, and GenAI APIs
+-Backend: Python, Flask, and GenAI APIs
 Key Features
 ElderEase offers a range of functionalities tailored to our audience:
-*✅ Speech-to-text conversation – Simply speak, and the app transcribes it.
-*✅ Text-to-text conversation – Type out questions and get clear, step-by-step guidance.
-*✅ Real-time support – Immediate assistance when it’s needed most.
-*✅ Video search – Easily find tutorial videos on common tech tasks.
-*✅ Integrated text-to-speech responses – Hear answers read aloud for added accessibility.
+1. Speech-to-text conversation – Simply speak, and the app transcribes it.
+2. Text-to-text conversation – Type out questions and get clear, step-by-step guidance.
+3. Real-time support – Immediate assistance when it’s needed most.
+4. Video search – Easily find tutorial videos on common tech tasks.
+5. Integrated text-to-speech responses – Hear answers read aloud for added accessibility.
 
 ### Designed for Simplicity
 We kept ElderEase clean, legible, and intuitive, ensuring a stress-free experience for seniors. Every button, font, and feature was designed to be easy to use, so technology feels like a helping hand rather than a hurdle.
