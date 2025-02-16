@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chatbot Response</title>
+    <link rel="stylesheet" href="response.css">
+</head>
+<body>
+    <div class="response-container">
+        <h1>Chatbot Response</h1>
+        <div id="chatResponse"></div>
+        <button onclick="goBack()">Go Back</button>
+    </div>
+
+    <script>
+        // Get response from localStorage and display it
+        document.getElementById("chatResponse").innerText = localStorage.getItem("chatResponse");
+
+        function goBack() {
+            window.location.href = "index.html"; // Change to the correct home page if different
+        }
+    </script>
+</body>
+</html>
