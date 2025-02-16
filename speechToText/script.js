@@ -56,10 +56,25 @@ const frmatresp = `A senior is asking: ${prompt}. Only show direct steps. Start 
 
     const data = await response.json();
     // Converts the API response to JSON format.
+   
+    
 
     return data.candidates[0].content.parts[0].text;
     // Returns the first generated response from the API (the text part of the response).
 }
+
+function formatSteps(text) {
+    return text.replace(/\bStep/g, '\nStep');
+}
+
+// try {
+//     let botMessage = await generateResponse(prompt);
+//     botMessage = formatSteps(cleanMarkdown(botMessage)); // Apply formatting
+//     addMessage(botMessage, false);
+// } catch (error) {
+//     console.error('Error:', error);
+//     addMessage('Sorry, I encountered an error. Please try again.', false);
+// }
 
 function cleanMarkdown(text) {
 // Defines a function `cleanMarkdown` to remove any Markdown formatting (like headers, bold text, etc.) from the response.
@@ -134,8 +149,8 @@ async function handleUserInput() {
         try {
             const botMessage = await generateResponse(userMessage);
             // Calls the `generateResponse` function to get the bot's reply.
-
-            addMessage(cleanMarkdown(botMessage), false);
+            console.log(formatSteps(cleanMarkdown(botMessage)));
+            addMessage(formatSteps(cleanMarkdown(botMessage)), false);
             // Adds the bot's cleaned response to the chat.
         } catch (error) {
             console.error('Error:', error);
@@ -170,3 +185,5 @@ userInput.addEventListener('keypress', (e) => {
 function goBack() {
     window.location.href = 'index.html'; // Redirect to the index.html file
 }
+
+

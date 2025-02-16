@@ -11,3 +11,4 @@ document.getElementById("joinBtn").addEventListener("click", function() {
             console.error(error);
         });
 });
+
